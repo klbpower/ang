@@ -2,22 +2,14 @@
     <h2>Coche </h2>
     <p>Marca: {{brand}}</p>    
     <p>Modelo: {{model}}</p>
-    <p>Potencias Urbanas menor a 300 cv</p>
+    <p>Potencias</p>
     <ul>
         <template v-for="(power, index) in powers" :key="index">
-            <li v-if="power <300">
-            {{power}}
-            </li>
+            <li v-if="power <300"> Urbana {{power}}</li>
+            <li v-else> Carrera {{power}}</li>
         </template>
     </ul>
-    <p>Potencias Urbanas mayores a 300 cv</p>
-    <ul>
-        <template v-for="(power, index) in powers" :key="index">
-            <li v-if="power >=300">
-            {{power}}
-            </li>
-        </template>
-    </ul>
+  
 </template>
 
 <script>
