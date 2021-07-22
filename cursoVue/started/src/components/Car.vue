@@ -5,7 +5,8 @@
     <p>Potencias</p>
     <ul>
         <template v-for="(power, index) in powers" :key="index">
-            <li v-if="power <300"> Urbana {{power}}</li>
+            <li v-if="power <280"> Urbana {{power}}</li>
+            <li v-else-if="power === 280"> Híbrido {{power}}</li>
             <li v-else> Carrera {{power}}</li>
         </template>
     </ul>
