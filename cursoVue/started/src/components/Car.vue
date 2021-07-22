@@ -1,7 +1,14 @@
 <template>
     <h2>Coche </h2>
     <p>Marca: {{brand}}</p>
-    <p>Color: {{color[2]}}</p>
+    <p>
+        Color
+        <ul>
+            <li v-for="(color,index) in colors" :key="index"> 
+            {{index}}: {{color}}
+            </li>
+        </ul>
+        </p>
     <p>Precio: {{price}}</p>
     <p>Potencia: {{power}}</p>
     {{message.title}} - {{message.text}}
@@ -13,7 +20,7 @@ export default{
   setup(){
       const brand = "Audi";
       const model = "A4";
-      const color = ["Blue", "Yellow", "Green", "Brown", "Black", "White", "Red", "Pink"];
+      const colors = ["Blue", "Yellow", "Green", "Brown", "Black", "White", "Red", "Pink"];
       const price = 45000;
       const power = 240;
       const message = {
@@ -23,7 +30,7 @@ export default{
       return {
           brand,
           model,
-          color,
+          colors,
           price,
           power,
           message,
