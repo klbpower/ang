@@ -22,9 +22,13 @@ export default{
     methods:{
         upPower( newPower ){
             console.log("Aumentando Potencia", newPower);
+            this.power+=newPower;
+            console.log(this.power);
         },
         downPower(newPower){
             console.log("Disminuyendo potencia", newPower);
+            this.power=this.power-newPower;
+            console.log(this.power);
         },
     }
             

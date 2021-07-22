@@ -8,18 +8,20 @@
 </template>
 
 <script>
-
+import { ref } from "vue";
 export default{
   setup(){
       const brand = "Audi";
       const model = "A4";
-      const power = 40;
+      let   power = ref(40);
           
-      const upPower = () => {
-          console.log("Aumentar", power);
+      const upPower = (newPower) => {
+          power.value=power.value+newPower;
+          console.log("Aumentar", power.value);
       }
-      const downPower = () => {
-          console.log("Disminuir", power);
+      const downPower = (newPower)=> {
+          power.value-=newPower;
+          console.log("Disminuir", power.value);
       }    
       return {
           brand,
